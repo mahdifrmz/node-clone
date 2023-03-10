@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.18.0)
+cmake_minimum_required(VERSION 3.16.0)
 project(node-clone VERSION 0.1.0)
 
 add_library(duktape
@@ -25,5 +25,5 @@ target_compile_options(duktape PRIVATE -std=c99)
 target_include_directories(nodec PRIVATE src duk)
 target_include_directories(duktape PRIVATE duk)
 
-target_link_libraries(nodec PRIVATE duktape)
+target_link_libraries(nodec PRIVATE duktape pthread)
 target_link_libraries(duktape PRIVATE m)
