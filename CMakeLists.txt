@@ -21,6 +21,7 @@ add_executable(nodec
 
 target_compile_options(nodec PRIVATE -Werror -Wall)
 target_compile_options(duktape PRIVATE -std=c99)
+set_target_properties(nodec PROPERTIES LINK_FLAGS "-static")
 
 target_include_directories(nodec PRIVATE src duk)
 target_include_directories(duktape PRIVATE duk)
